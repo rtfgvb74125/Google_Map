@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google map choropleth</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHdjXjLbGygIBcjcVxo3diWBCgNu2Cqro&callback=initMap"></script>
+    <script type="text/javascript" src="GoogleMapChoropleth.js"></script>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body onload="initMap()">
+<div id="map" style="height: 100%;width: 100%"></div>
+</body>
+</html>
