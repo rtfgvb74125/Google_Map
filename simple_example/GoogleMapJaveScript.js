@@ -7,7 +7,21 @@ function initMap() {
     //creat Map
     map = new google.maps.Map(document.getElementById('map'),{
         center:myLacat,
-        zoom:7
+        zoom:7,
+
+        //unable 地圖與衛星類型 UI，位置預設左上方
+        mapTypeControlOptions:false,
+        //unable 全螢幕地圖 UI，位置預設右上方
+        fullscreenControlOptions:false,
+        //unable 旋轉 45 度地圖 UI，位置預設右下方
+        rotataeControlOptions:false,
+        //unable 比例尺 UI，位置預設右下方
+        scaleControlOptions:false,
+        //unable 地圖與街景切換 UI，位置預設右下方
+        streetViewControlOptions:false,
+        //unable放大縮小地圖 UI，位置預設右下方
+        zoomCntrolOptions:false
+
     });
     //creat marker
     var marker = new google.maps.Marker({

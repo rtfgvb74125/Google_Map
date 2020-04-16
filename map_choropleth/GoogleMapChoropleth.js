@@ -4,7 +4,19 @@ var levl = [5,10,15,20,25,30];
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'),{
         center:myLocat,
-        zoom:8
+        zoom:8,
+        //unable 地圖與衛星類型 UI，位置預設左上方
+        mapTypeControlOptions:false,
+        //unable 全螢幕地圖 UI，位置預設右上方
+        fullscreenControlOptions:false,
+        //unable 旋轉 45 度地圖 UI，位置預設右下方
+        rotataeControlOptions:false,
+        //unable 比例尺 UI，位置預設右下方
+        scaleControlOptions:false,
+        //unable 地圖與街景切換 UI，位置預設右下方
+        streetViewControlOptions:false,
+        //unable放大縮小地圖 UI，位置預設右下方
+        zoomCntrolOptions:false
     });
     map.data.loadGeoJson('Taiwan_map.geojson');
     //設定區塊style
