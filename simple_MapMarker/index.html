@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBHdjXjLbGygIBcjcVxo3diWBCgNu2Cqro&callback=initMap"></script>
+    <title>Create Map Marker</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            height: 100%;
+        }
+    </style>
+
+</head>
+<body onload="initMap()">
+<h1>Create More Marker</h1>
+<div id="map"></div>
+<script>
+    var map;
+    //lat = 緯度 lng = 經度
+    var locat = {lat: 24.046027, lng: 120.687038};
+    var markers = new Array();
+    //多標點經緯度
+    var markerlocat = [
+        {label: 'Taipei', lat: 25.03746, lng: 121.564558},
+        {label: 'Taoyuan', lat: 25.076389, lng: 121.223889},
+        {label: 'Taichung', lat: 24.138504, lng: 120.678434},
+        {label: 'Kaohsiung', lat: 22.620662, lng: 120.311919},
+        {label: 'Penghu', lat: 23.577025, lng: 119.576396}
+    ];
+    //宣告marker infomation
+    var infowin = new google.maps.InfoWindow();
+    function initMap() {
+        //map初始
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: locat,
+            zoom: 7
+        });
+
+        //多標記與info視窗
+        for (var i = 0; i < markerlocat.length; i++) {
+            //標記生成
+            markers = new google.maps.Marker({
+                position: {
+                    lat: markerlocat[i].lat,
+                    lng: markerlocat[i].lng
+                },
+                map: map,
+            });
+            //info視窗內容與功能生成
+            google.maps.event.addListener(markers, 'click', (function(markers, i) {
+                return function() {
+                    infowin.setContent(markerlocat[i].label);
+                    infowin.open(map, markers);
+                }
+            })(markers, i));
+        }
+    }
+
+
+</script>
+</body>
+</html>
