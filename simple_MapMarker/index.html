@@ -28,11 +28,11 @@
     var markers = new Array();
     //多標點經緯度
     var markerlocat = [
-        {label: 'Taipei', lat: 25.03746, lng: 121.564558},
-        {label: 'Taoyuan', lat: 25.076389, lng: 121.223889},
-        {label: 'Taichung', lat: 24.138504, lng: 120.678434},
-        {label: 'Kaohsiung', lat: 22.620662, lng: 120.311919},
-        {label: 'Penghu', lat: 23.577025, lng: 119.576396}
+        {label: 'Taipei', lat: 25.03746, lng: 121.564558,test:123,test2:456,button:'tp'},
+        {label: 'Taoyuan', lat: 25.076389, lng: 121.223889,test:111,test2:222,button:'ty'},
+        {label: 'Taichung', lat: 24.138504, lng: 120.678434,test:233,test2:556,button:'tc'},
+        {label: 'Kaohsiung', lat: 22.620662, lng: 120.311919,test:336,test2:965,button:'ks'},
+        {label: 'Penghu', lat: 23.577025, lng: 119.576396,test:687,test2:856,button:'ph'}
     ];
     //宣告marker infomation
     var infowin = new google.maps.InfoWindow();
@@ -53,10 +53,12 @@
                 },
                 map: map,
             });
+
             //info視窗內容與功能生成
             google.maps.event.addListener(markers, 'click', (function(markers, i) {
                 return function() {
-                    infowin.setContent(markerlocat[i].label);
+                    var infomessage = '<div><p>'+markerlocat[i].label+'</p><p>'+markerlocat[i].test+'</p><p>'+markerlocat[i].test2+'</p><button>詳細資訊</button></div>';
+                    infowin.setContent(infomessage);
                     infowin.open(map, markers);
                 }
             })(markers, i));
