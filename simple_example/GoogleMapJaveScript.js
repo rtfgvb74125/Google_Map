@@ -10,17 +10,17 @@ function initMap() {
         zoom:7,
 
         //unable 地圖與衛星類型 UI，位置預設左上方
-        mapTypeControlOptions:false,
+        mapTypeControl:false,
         //unable 全螢幕地圖 UI，位置預設右上方
-        fullscreenControlOptions:false,
+        fullscreenControl:false,
         //unable 旋轉 45 度地圖 UI，位置預設右下方
-        rotataeControlOptions:false,
+        rotataeControl:false,
         //unable 比例尺 UI，位置預設右下方
-        scaleControlOptions:false,
+        scaleControl:false,
         //unable 地圖與街景切換 UI，位置預設右下方
-        streetViewControlOptions:false,
+        streetViewControl:false,
         //unable放大縮小地圖 UI，位置預設右下方
-        zoomCntrolOptions:false
+        zoomControl:false
 
     });
     //creat marker
